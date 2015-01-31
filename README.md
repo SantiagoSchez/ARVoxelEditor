@@ -33,6 +33,13 @@ program as:
 where `voxel_size` controls the size of the voxels and consequently
 the resolution of the canvas; less size = more voxels you can place!
 
+For example:
+
+`./exec/arvoxeleditor -dev=/dev/video/1 16`
+
+If no arguments are provided, the application will try to open the first
+available camera and a voxel size of 16 units.
+
 Let's paint!
 ============
 
@@ -44,8 +51,8 @@ it were a brush.
 Controls are indicated within the application:
 - Q: Quit
 - -/+: Change colour (cycles the list of colours)
-- R: Reset
-- U: Undo
+- R: Clean canvas (reset)
+- U: Undo the last action (removes the last placed voxel)
 - ENTER: Command line
 - SPACEBAR: Put voxel
 - X: Remove voxel
@@ -55,9 +62,13 @@ just support the next commands:
 - `save <path/filename.vox>`: Saves the current model to the given path.
 - `load <path/filename.vox>`: Loads the current model to the given path.
 
-New commands can be easily added; look at the 
+New commands can be easily added; look at the
 [`input()`](https://github.com/SanchezSobrino/ARVoxelEditor/blob/master/src/functions.c#L144) function for more
 information.
+
+Also, in command line mode the user can press the '^' key in order to insert the
+current working directory, for example, to access easily to the models
+directory.
 
 VOX file format
 ===============
@@ -89,21 +100,23 @@ changed since that images.
 ![.](https://github.com/SanchezSobrino/ARVoxelEditor/blob/master/models/wired_cube.png "A wired cube made of voxels")
 ![.](https://github.com/SanchezSobrino/ARVoxelEditor/blob/master/models/smiley.png "A smiley face made of voxels")
 
+If you make some model, send it to me to insert it here or just make a pull request :)
+
 License
 =======
 > ARVoxelEditor - Augmented Reality Voxel Editor
 > Copyright (C) 2015 Santiago Sánchez Sobrino
-> 
+>
 > This program is free software; you can redistribute it and/or modify
 > it under the terms of the GNU General Public License as published by
 > the Free Software Foundation; either version 2 of the License, or
 > (at your option) any later version.
-> 
+>
 > This program is distributed in the hope that it will be useful,
 > but WITHOUT ANY WARRANTY; without even the implied warranty of
 > MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 > GNU General Public License for more details.
-> 
+>
 > You should have received a copy of the GNU General Public License along
 > with this program; if not, write to the Free Software Foundation, Inc.,
 > 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.

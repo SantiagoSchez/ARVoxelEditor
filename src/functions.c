@@ -66,7 +66,8 @@ void menu() {
           "R: Reset\n"
           "U: Undo\n"
           "ENTER: Command line\n"
-          "SPACEBAR: Put voxel\n");
+          "SPACEBAR: Put voxel\n"
+          "X: Remove voxel\n");
   printText(1.0f, 1.0f, 1.0f,  10, 14,  GLUT_BITMAP_HELVETICA_12, buff, 0);
 
   if(is_input)
