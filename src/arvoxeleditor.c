@@ -31,6 +31,8 @@
 #include "functions.h"
 #include "structs.h"
 
+#define PATTERN_WIDTH 120.0
+
 void init(char *arg) {
   ARParam  wparam, cparam;
   double c[2] = {0.0, 0.0};
@@ -48,7 +50,7 @@ void init(char *arg) {
   arInitCparam(&cparam);
 
   // Load brush marker
-  addObject("data/simple.patt", BRUSH_PATT, 120.0, c, drawBrush);
+  addObject("data/simple.patt", BRUSH_PATT, PATTERN_WIDTH, c, drawBrush);
 
   // Load multimarker file (canvas)
   if((mMarker = arMultiReadConfigFile("data/marker.dat")) == NULL)
